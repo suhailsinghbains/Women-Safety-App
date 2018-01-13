@@ -14,7 +14,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Yellow_Button_Pressed(View view) {
-        Intent intent = new Intent(this.getSupportParentActivityIntent());
+        Intent intent = new Intent(this, Yellow.class);
+        startActivity(intent);
+    }
+
+    public void Red_Button_Pressed(View view) {
+        Intent intent = new Intent(this, Red.class);
         startActivity(intent);
     }
 }

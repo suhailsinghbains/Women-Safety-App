@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Yellow"></activity>
+        <activity android:name=".Yellow" />
+        <activity android:name=".Red"></activity>
     </application>
 
 </manifest>
