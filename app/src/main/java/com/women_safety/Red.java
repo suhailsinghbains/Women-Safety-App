@@ -10,5 +10,4 @@ public class Red extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_red);
     }
-    //API Call
 }
