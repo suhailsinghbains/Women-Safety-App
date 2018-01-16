@@ -20,8 +20,9 @@ public class Yellow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yellow);
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText(MyAsyncTask.Status.values().toString());
+        //TextView textView_yellow = (TextView) findViewById(R.id.textView_Yellow);
+        new MyAsyncTask().execute();
+        //textView_yellow.setText("uo");
     }
     public class MyAsyncTask extends AsyncTask<JSONObject, Void, JSONObject> {
         @Override
@@ -29,7 +30,7 @@ public class Yellow extends AppCompatActivity {
             return postData();
         }
         JSONObject postData(){
-            TextView textViewResponseFind = (TextView) findViewById(R.id.textView);
+            TextView textViewResponseFind = (TextView) findViewById(R.id.textView_Yellow);
             String EVENTSURL = "https://reqres.in/api/users?page=2";    //Real Url here
             HttpClient httpclient = new DefaultHttpClient();
             HttpGet httpget = new HttpGet(EVENTSURL);
@@ -43,7 +44,7 @@ public class Yellow extends AppCompatActivity {
                     String json = EntityUtils.toString(response.getEntity());
                     obj = new JSONObject(json);
                     textViewResponseFind.setText(obj.toString());
-                }catch (Exception e){
+                }catch (Exception ignored){
                 }
                 return obj;
             } catch (ClientProtocolException e) {

@@ -7,7 +7,7 @@
     tools:context="com.women_safety.Red">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView_Red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
