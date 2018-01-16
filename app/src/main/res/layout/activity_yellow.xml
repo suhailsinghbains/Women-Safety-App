@@ -7,12 +7,22 @@
     tools:context="com.women_safety.Yellow">
 
     <TextView
+        android:id="@+id/Yellow_Calling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Sending"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
         android:id="@+id/textView_Yellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="216dp"
-        android:text="TextView" />
+        android:text="Not that Severe, Will pass Soon!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 </RelativeLayout>

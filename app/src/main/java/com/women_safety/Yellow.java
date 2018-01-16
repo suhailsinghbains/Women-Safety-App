@@ -14,23 +14,31 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import static java.lang.String.copyValueOf;
+import static java.lang.String.format;
 
 public class Yellow extends AppCompatActivity {
+    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yellow);
-        //TextView textView_yellow = (TextView) findViewById(R.id.textView_Yellow);
-        new MyAsyncTask().execute();
-        //textView_yellow.setText("uo");
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                new MyAsyncTask().execute();
+            }
+        }, 0, 5000);
     }
     public class MyAsyncTask extends AsyncTask<JSONObject, Void, JSONObject> {
         @Override
         protected JSONObject doInBackground(JSONObject... params) {
             return postData();
         }
-        JSONObject postData(){
-            TextView textViewResponseFind = (TextView) findViewById(R.id.textView_Yellow);
+        public JSONObject postData(){
             String EVENTSURL = "https://reqres.in/api/users?page=2";    //Real Url here
             HttpClient httpclient = new DefaultHttpClient();
             HttpGet httpget = new HttpGet(EVENTSURL);
@@ -43,7 +51,7 @@ public class Yellow extends AppCompatActivity {
                 try {
                     String json = EntityUtils.toString(response.getEntity());
                     obj = new JSONObject(json);
-                    textViewResponseFind.setText(obj.toString());
+                    //textViewResponseFind.setText(obj.toString());
                 }catch (Exception ignored){
                 }
                 return obj;
@@ -54,6 +62,14 @@ public class Yellow extends AppCompatActivity {
                 // TODO Auto-generated catch block
                 return obj;
             }
+        }
+        @Override
+        protected void onPostExecute(JSONObject result) {
+            TextView textViewResponseFind_Yellow = (TextView) findViewById(R.id.textView_Yellow);
+            //textViewResponseFind_Yellow.setText(result.toString()); Status Code Etc
+            TextView API_Sent = (TextView) findViewById(R.id.Yellow_Calling);
+            count = count + 1;
+            API_Sent.setText(String.format("Location sent %s Times", String.valueOf(count)));
         }
     }
 }
