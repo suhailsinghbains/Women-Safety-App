@@ -25,4 +25,16 @@
         android:text="Not that Severe, Will pass Soon!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
+    <EditText
+        android:id="@+id/Comments_Yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="74dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/textView_Yellow"
+        android:text="Nothing"/>
+
 </RelativeLayout>

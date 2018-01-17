@@ -3,6 +3,7 @@ package com.women_safety;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
@@ -37,7 +38,11 @@ public class Red extends AppCompatActivity {
             return postData();
         }
         public JSONObject postData(){
-            String EVENTSURL = "https://reqres.in/api/users?page=2";    //Real Url here
+            String Start_String = "10.0.2.2:300";    //Real Url here
+            String Device_Details_Yellow = new Get_Info_of_Device().getStringLocation();
+            //Comments
+            EditText editText = (EditText) findViewById(R.id.Comments_Red);
+            String EVENTSURL = Start_String + Device_Details_Yellow + "/" + editText.getText();
             HttpClient httpclient = new DefaultHttpClient();
             HttpGet httpget = new HttpGet(EVENTSURL);
             JSONObject obj = null;
