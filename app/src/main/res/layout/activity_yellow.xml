@@ -35,6 +35,6 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:layout_below="@id/textView_Yellow"
-        android:text="Nothing"/>
+        android:text="(YELLOW) Additional Info"/>
 
 </RelativeLayout>

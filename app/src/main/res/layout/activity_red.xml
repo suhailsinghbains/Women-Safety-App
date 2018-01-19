@@ -34,6 +34,7 @@
         android:layout_marginBottom="74dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:layout_below="@id/textView_Red"/>
+        android:layout_below="@id/textView_Red"
+        android:text="(RED) Additional Info"/>
 
 </RelativeLayout>

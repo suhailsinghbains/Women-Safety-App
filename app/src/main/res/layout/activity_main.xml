@@ -23,11 +23,26 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="138dp"
         android:text="Red"
-        android:onClick="Red_Button_Pressed"/>
+        android:onClick="Red_Button_Pressed" />
+
     <TextView
-        android:id="@+id/Test"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="YO"/>
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="For non-severe Situations"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="FOR emergency Situations"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
 
 </RelativeLayout>
