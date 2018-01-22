@@ -8,7 +8,8 @@ Script:
     Yellow:
       Yellow is for the situation in which you think the situation might get worse, for example, if you are going with someone in the car and the driver takes a left turn instead of right turn. You can press the Yellow button, there is also a section to add some useful information such as car number, under Metro Pillar No (as Location might get affect when stand under some obstacles, such as Metro bridge in the case) or something else, which you think would relevant to the police. It will send your IMEI number, location, time, along with that comment every 5 seconds, and you can still add more information at any given point of time.
     Red:
-      //Stuff to written
+      Same as Yellow, but will call the API every half a second due to the emergency.
+      //More Stuff here
 
 Features:
 - Ability to add personalized comments.
